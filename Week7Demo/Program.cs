@@ -28,7 +28,7 @@ for (int i = 0; i < circleList.Count; i++)
 //foreach(var c in circleList)
 {
     Circle c = circleList[i];
-    Console.WriteLine("{0, -4} {1, -10} {2, -10} {3}", (i + 1), c.Type, c.Color, c.Radius);
+    Console.WriteLine("{0, -4} {1, -10} {2, -10} {3, -8} {4, -10:0.00}", (i + 1), c.Type, c.Color, c.Radius, c.FindArea());
 }
 DisplayList(circleList);
 Console.Write("Enter Circle Number: ");
