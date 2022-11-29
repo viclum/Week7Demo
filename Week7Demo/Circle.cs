@@ -24,6 +24,8 @@ namespace Week7Demo
         }
         public int CompareTo(Circle c)
         {
+            return FindArea().CompareTo(c.FindArea());
+            /*
             if (Radius > c.Radius)
             {
                 return 1;
@@ -36,6 +38,7 @@ namespace Week7Demo
             {
                 return -1;
             }
+            */
         }
         public override string ToString()
         {

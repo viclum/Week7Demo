@@ -15,7 +15,9 @@ void InitCircleList(List<Circle> cList)
 List<Circle> circleList = new List<Circle>();
 InitCircleList(circleList);
 circleList.Sort();
-foreach(var c in circleList)
+for (int i = 0; i < circleList.Count; i++)
+//foreach(var c in circleList)
 {
-    Console.WriteLine(c);
+    Circle c = circleList[i];
+    Console.WriteLine("{0, -4} {1, -10} {2, -10} {3}", (i + 1), c.Type, c.Color, c.Radius);
 }
