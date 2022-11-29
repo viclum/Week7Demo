@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Week7Demo
 {
-    class Circle : Shape
+    class Circle : Shape, IComparable<Circle>
     {
         public double Radius { get; set; }
         public Circle() : base("Circle", "Red")
@@ -21,6 +21,21 @@ namespace Week7Demo
         public override double FindArea()
         {
             return Math.PI * Radius * Radius;
+        }
+        public int CompareTo(Circle c)
+        {
+            if (Radius > c.Radius)
+            {
+                return 1;
+            }
+            else if (Radius == c.Radius)
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
         }
         public override string ToString()
         {
