@@ -48,20 +48,37 @@ void DisplayList(List<Circle> circleList)
 List<Shape> shapeList = new List<Shape>();
 InitShapeList(shapeList);
 DisplayShapeList(shapeList);
-for (int i = shapeList.Count - 1; i >= 0; i--)
-//foreach(var c in circleList)
+if (shapeList.Count > 0)
 {
-    Shape s = shapeList[i];
-    
-    if (s is Circle)
+    bool deleted = false;
+    for (int i = shapeList.Count - 1; i >= 0; i--)
+    //foreach(var c in circleList)
     {
-        Console.WriteLine("Deleting last circle");
-        Console.WriteLine("{0, -10} {1, -10}", s.Type, s.Color);
-        shapeList.Remove(s);
-        break;
+        Shape s = shapeList[i];
+
+        if (s is Circle)
+        {
+            Console.WriteLine("Deleting last circle");
+            Console.WriteLine("{0, -10} {1, -10}", s.Type, s.Color);
+            shapeList.Remove(s);
+            deleted = true;
+            break;
+        }
     }
+    if (deleted)
+    {
+        DisplayShapeList(shapeList);
+    }
+    else
+    {
+        Console.WriteLine("There is no circle to delete");
+    }
+    
 }
-DisplayShapeList(shapeList);
+else
+{
+    Console.WriteLine("The list is empty");
+}
 //DisplayList(circleList);
 /*
 Delete the last Circle object in shapeList. 
